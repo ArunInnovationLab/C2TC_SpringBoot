@@ -28,6 +28,8 @@ public class ShopOwner {
 		super();
 	}
 
+
+
 	public ShopOwner(Integer id, String name, LocalDate dob, String address, Integer shopId, Shop shop) {
 		super();
 		this.id = id;
@@ -38,53 +40,79 @@ public class ShopOwner {
 		this.shop = shop;
 	}
 
+
+
 	public Integer getId() {
 		return id;
 	}
+
+
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
+
+
 	public String getName() {
 		return name;
 	}
+
+
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
+
+
 	public LocalDate getDob() {
 		return dob;
 	}
+
+
 
 	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
 
+
+
 	public String getAddress() {
 		return address;
 	}
+
+
 
 	public void setAddress(String address) {
 		this.address = address;
 	}
 
+
+
 	public Integer getShopId() {
 		return shopId;
 	}
+
+
 
 	public void setShopId(Integer shopId) {
 		this.shopId = shopId;
 	}
 
+
+
 	public Shop getShop() {
 		return shop;
 	}
 
+
+
 	public void setShop(Shop shop) {
 		this.shop = shop;
 	}
+
+	
 	
 	
 }

@@ -27,7 +27,8 @@ public class Item {
 		super();
 	}
 
-	public Item(Integer id, String name, LocalDate manufacturing, LocalDate expiry, Float price, String category) {
+	public Item(Integer id, String name, LocalDate manufacturing, LocalDate expiry, Float price, String category,
+			Shop shop) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -35,6 +36,7 @@ public class Item {
 		this.expiry = expiry;
 		this.price = price;
 		this.category = category;
+		this.shop = shop;
 	}
 
 	public Integer getId() {
@@ -84,6 +86,16 @@ public class Item {
 	public void setCategory(String category) {
 		this.category = category;
 	}
+
+	public Shop getShop() {
+		return shop;
+	}
+
+	public void setShop(Shop shop) {
+		this.shop = shop;
+	}
+
+	
 	
 	
 	
