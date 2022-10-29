@@ -2,14 +2,11 @@ package com.tnsif.client.entities;
 
 import java.time.LocalDate;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class Employee {
@@ -23,16 +20,15 @@ public class Employee {
 	private String address;
 	private String designation;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@Autowired
-	private Shop shop;
+//	@ManyToOne(cascade = CascadeType.ALL)
+//	@Autowired
+//	private Shop shop;
 	
 	public Employee() {
 		super();
 	}
-	
-	public Employee(Integer id, String name, LocalDate dob, Float salary, String address, String designation,
-			Shop shop) {
+
+	public Employee(Integer id, String name, LocalDate dob, Float salary, String address, String designation) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -40,25 +36,24 @@ public class Employee {
 		this.salary = salary;
 		this.address = address;
 		this.designation = designation;
-		this.shop = shop;
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
-	
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public LocalDate getDob() {
 		return dob;
 	}
@@ -90,14 +85,8 @@ public class Employee {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
-
-	public Shop getShop() {
-		return shop;
-	}
-
-	public void setShop(Shop shop) {
-		this.shop = shop;
-	}
+	
+	
 	
 
 }

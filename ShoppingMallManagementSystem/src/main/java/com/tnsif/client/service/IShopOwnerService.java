@@ -2,7 +2,6 @@ package com.tnsif.client.service;
 
 import java.util.List;
 
-import com.tnsif.client.entities.Employee;
 import com.tnsif.client.entities.ShopOwner;
 
 public interface IShopOwnerService {

@@ -7,10 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import org.springframework.beans.factory.annotation.Autowired;
 	
 @Entity
 public class Shop {
@@ -24,15 +24,14 @@ public class Shop {
 	private String leaseStatus;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@Autowired
 	private ShopOwner shopOwner;
 	
-	@OneToMany (mappedBy = "shop",cascade = CascadeType.ALL)
-	@Autowired
+	@OneToMany (cascade = CascadeType.ALL)
+	@JoinColumn(referencedColumnName = "shopId")
 	private List<Employee> shopEmployee;
 	
-	@OneToMany(mappedBy = "shop",cascade = CascadeType.ALL)
-	@Autowired
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(referencedColumnName = "shopId")
 	private List<Item> items;
 	
 	public Shop() {

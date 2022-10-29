@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tnsif.client.entities.Item;
@@ -14,6 +15,7 @@ import com.tnsif.client.repository.IItemRepository;
 @Transactional
 public class ItemServiceImpl implements IItemService {
 
+	@Autowired
 	private IItemRepository repo;
 	
 	@Override
@@ -31,7 +33,7 @@ public class ItemServiceImpl implements IItemService {
 		 updateItem.setManufacturing(item.getManufacturing());
 		 updateItem.setName(item.getName());
 		 updateItem.setPrice(item.getPrice());
-		 updateItem.setShop(item.getShop());
+		// updateItem.setShop(item.getShop());
 		 this.addItem(updateItem);
 	}
 

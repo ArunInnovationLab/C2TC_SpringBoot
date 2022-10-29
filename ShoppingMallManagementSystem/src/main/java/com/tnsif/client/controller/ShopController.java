@@ -14,40 +14,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tnsif.client.entities.Item;
-import com.tnsif.client.service.IItemService;
-
+import com.tnsif.client.entities.Shop;
+import com.tnsif.client.service.IShopService;
 
 @RestController
-@RequestMapping("item")
-public class ItemController {
+@RequestMapping("shop")
+public class ShopController {
 
 	@Autowired
-	private IItemService service;
+	private IShopService service;
 	
 	@GetMapping("/list")
-	public List<Item> getAllShopOwners(){
-		return service.listAllItems();
+	public List<Shop> getAllShopOwners(){
+		return service.listAllShops();
 	}
 	
 	@PostMapping("/create")
-	public void createItem(@RequestBody Item item) {
-		service.addItem(item);
+	public void createShop(@RequestBody Shop shop) {
+		service.addShop(shop);
 	}
 	
 	@GetMapping("/search/{id}")
-	public ResponseEntity<Item> getShopOwnerById(@PathVariable Integer id){
-		Item item = service.searchItem(id);
-		return new ResponseEntity<Item>(item, HttpStatus.OK);
+	public ResponseEntity<Shop> getShopOwnerById(@PathVariable Integer id){
+		Shop Shop = service.searchShop(id);
+		return new ResponseEntity<Shop>(Shop, HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/delete/{id}")
 	public void deleteShopOwnerById(@PathVariable Integer id) {
-		service.deleteItem(id);
+		service.deleteShop(id);
 	}
 	
 	@PutMapping("/update/{id}")
-	public void updateShopOwner(@PathVariable Integer id,@RequestBody Item item) {
-		service.updateItem(id, item);
+	public void updateShopOwner(@PathVariable Integer id,@RequestBody Shop shop) {
+		service.updateShop(id, shop);
 	}
 }

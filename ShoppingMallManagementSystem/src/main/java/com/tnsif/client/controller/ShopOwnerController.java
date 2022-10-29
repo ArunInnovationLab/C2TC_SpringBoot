@@ -46,7 +46,7 @@ public class ShopOwnerController {
 	}
 	
 	@PutMapping("/update/{id}")
-	public void updateShopOwner(@PathVariable Integer id, ShopOwner shopOwner) {
+	public void updateShopOwner(@PathVariable Integer id,@RequestBody ShopOwner shopOwner) {
 		service.updateShopOwner(id, shopOwner);
 	}
 }
