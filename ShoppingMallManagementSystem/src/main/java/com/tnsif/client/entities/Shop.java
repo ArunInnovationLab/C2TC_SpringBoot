@@ -28,7 +28,7 @@ public class Shop {
 	
 	@OneToMany (cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "shopId")
-	private List<Employee> shopEmployee;
+	private List<Employee> shopEmployees;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "shopId")
@@ -43,7 +43,7 @@ public class Shop {
 		super();
 		this.shopId = shopId;
 		this.shopCategory = shopCategory;
-		this.shopEmployee = shopEmployee;
+		this.shopEmployees = shopEmployee;
 		this.shopName = shopName;
 		this.shopStatus = shopStatus;
 		this.shopOwner = shopOwner;
@@ -68,11 +68,11 @@ public class Shop {
 	}
 
 	public List<Employee> getShopEmployee() {
-		return shopEmployee;
+		return shopEmployees;
 	}
 
 	public void setShopEmployee(List<Employee> shopEmployee) {
-		this.shopEmployee = shopEmployee;
+		this.shopEmployees = shopEmployee;
 	}
 
 	public String getShopName() {

@@ -21,7 +21,6 @@ public class Employee {
 	private String designation;
 	
 //	@ManyToOne(cascade = CascadeType.ALL)
-//	@Autowired
 //	private Shop shop;
 	
 	public Employee() {
