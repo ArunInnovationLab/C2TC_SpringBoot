@@ -2,15 +2,18 @@ package com.tnsif.client.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 @Entity
 public class Item {
-	
+			
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -20,13 +23,14 @@ public class Item {
 	private Float price;
 	private String category;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
+	@Autowired
 	private Shop shop;
 		
 	public Item() {
 		super();
 	}
-
+						
 	public Item(Integer id, String name, LocalDate manufacturing, LocalDate expiry, Float price, String category,
 			Shop shop) {
 		super();
@@ -50,11 +54,11 @@ public class Item {
 	public String getName() {
 		return name;
 	}
-
+	
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
 	public LocalDate getManufacturing() {
 		return manufacturing;
 	}

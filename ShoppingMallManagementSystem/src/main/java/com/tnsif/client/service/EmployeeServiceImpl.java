@@ -30,7 +30,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		 updateEmployee.setAddress(employeeDetails.getAddress());
 		 updateEmployee.setSalary(employeeDetails.getSalary());
 		 updateEmployee.setDob(employeeDetails.getDob());
-		 updateEmployee.setShop_id(employeeDetails.getShop_id());
+		 updateEmployee.setShop(employeeDetails.getShop());
 		 this.addEmployee(updateEmployee);
 	}
 	
