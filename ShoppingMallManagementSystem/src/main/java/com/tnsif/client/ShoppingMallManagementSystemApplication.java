@@ -3,6 +3,8 @@ package com.tnsif.client;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
+
 @SpringBootApplication
 public class ShoppingMallManagementSystemApplication {
 	
