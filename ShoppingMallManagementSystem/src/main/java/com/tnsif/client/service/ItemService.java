@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.tnsif.client.entities.Item;
 
-public interface IItemService {
+public interface ItemService {
 
 	void addItem(Item item);
 	

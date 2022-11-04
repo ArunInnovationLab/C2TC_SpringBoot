@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tnsif.client.entities.Item;
-import com.tnsif.client.service.IItemService;
+import com.tnsif.client.service.ItemService;
 
 
 @RestController
@@ -23,7 +23,7 @@ import com.tnsif.client.service.IItemService;
 public class ItemController {
 
 	@Autowired
-	private IItemService service;
+	private ItemService service;
 	
 	@GetMapping("/list")
 	public List<Item> getAllShopOwners(){

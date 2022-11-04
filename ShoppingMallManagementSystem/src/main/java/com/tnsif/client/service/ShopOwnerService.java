@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.tnsif.client.entities.ShopOwner;
 
-public interface IShopOwnerService {
+public interface ShopOwnerService {
 
 	void addShopOwner(ShopOwner shopOwner);
 	

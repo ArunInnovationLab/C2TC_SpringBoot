@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.tnsif.client.entities.Shop;
 
-public interface IShopService {
+public interface ShopService {
 
 	void addShop(Shop shop);
 	

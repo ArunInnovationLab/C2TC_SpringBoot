@@ -15,17 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tnsif.client.entities.Shop;
-import com.tnsif.client.service.IShopService;
+import com.tnsif.client.service.ShopService;
 
 @RestController
 @RequestMapping("shop")
 public class ShopController {
 
 	@Autowired
-	private IShopService service;
+	private ShopService service;
 	
 	@GetMapping("/list")
-	public List<Shop> getAllShopOwners(){
+	public List<Shop> getAllShops(){
 		return service.listAllShops();
 	}
 	
@@ -35,18 +35,18 @@ public class ShopController {
 	}
 	
 	@GetMapping("/search/{id}")
-	public ResponseEntity<Shop> getShopOwnerById(@PathVariable Integer id){
-		Shop Shop = service.searchShop(id);
-		return new ResponseEntity<Shop>(Shop, HttpStatus.OK);
+	public ResponseEntity<Shop> getShopById(@PathVariable Integer id){
+		Shop shop = service.searchShop(id);
+		return new ResponseEntity<Shop>(shop, HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/delete/{id}")
-	public void deleteShopOwnerById(@PathVariable Integer id) {
+	public void deleteShopById(@PathVariable Integer id) {
 		service.deleteShop(id);
 	}
 	
 	@PutMapping("/update/{id}")
-	public void updateShopOwner(@PathVariable Integer id,@RequestBody Shop shop) {
+	public void updateShop(@PathVariable Integer id,@RequestBody Shop shop) {
 		service.updateShop(id, shop);
 	}
 }

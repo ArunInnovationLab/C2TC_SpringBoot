@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.tnsif.client.entities.Employee;
 
-public interface IEmployeeService {
+public interface EmployeeService {
 
 	void addEmployee(Employee employee);
 	

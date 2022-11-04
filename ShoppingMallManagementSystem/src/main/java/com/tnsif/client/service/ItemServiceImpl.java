@@ -8,15 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tnsif.client.entities.Item;
-import com.tnsif.client.repository.IItemRepository;
+import com.tnsif.client.repository.ItemRepository;
 
 
 @Service
 @Transactional
-public class ItemServiceImpl implements IItemService {
+public class ItemServiceImpl implements ItemService {
 
 	@Autowired
-	private IItemRepository repo;
+	private ItemRepository repo;
 	
 	@Override
 	public void addItem(Item item) {

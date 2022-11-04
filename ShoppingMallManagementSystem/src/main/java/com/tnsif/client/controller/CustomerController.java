@@ -14,39 +14,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tnsif.client.service.ShopOwnerService;
-import com.tnsif.client.entities.ShopOwner;
+import com.tnsif.client.entities.Customer;
+import com.tnsif.client.service.CustomerService;
 
 @RestController
-@RequestMapping("shop_owner")
-public class ShopOwnerController {
-	
+@RequestMapping("customer")
+public class CustomerController {
+
 	@Autowired
-	private ShopOwnerService service;
-	
+	private CustomerService service;
+		
 	@GetMapping("/list")
-	public List<ShopOwner> getAllShopOwners(){
-		return service.listAllShopOwners();
-	}
-	
-	@PostMapping("/create")
-	public void createShopOwner(@RequestBody ShopOwner shopOwner) {
-		service.addShopOwner(shopOwner);
+	public List<Customer> getAllCustomers(){
+		return service.listAllCustomers();
 	}
 	
 	@GetMapping("/search/{id}")
-	public ResponseEntity<ShopOwner> getShopOwnerById(@PathVariable Integer id){
-		ShopOwner owner = service.searchShopOwner(id);
-		return new ResponseEntity<ShopOwner>(owner, HttpStatus.OK);
-	}
+	public ResponseEntity<Customer> getCustomerById(@PathVariable Integer id){
+		Customer customer = service.searchCustomer(id);
+		return new ResponseEntity<Customer>(customer, HttpStatus.OK);
+	}	
+	
+	@PostMapping("/create")
+	public void createCustomer(@RequestBody Customer customer) {
+		service.addCustomer(customer);
+	}	
 	
 	@DeleteMapping("/delete/{id}")
-	public void deleteShopOwnerById(@PathVariable Integer id) {
-		service.deleteShopOwner(id);
+	public void deleteCustomerById(@PathVariable Integer id) {
+		service.deleteCustomer(id);
 	}
 	
 	@PutMapping("/update/{id}")
-	public void updateShopOwner(@PathVariable Integer id,@RequestBody ShopOwner shopOwner) {
-		service.updateShopOwner(id, shopOwner);
+	public void updateCustomer(@PathVariable Integer id,@RequestBody Customer customer){
+		service.updateCustomer(id, customer);
 	}
 }

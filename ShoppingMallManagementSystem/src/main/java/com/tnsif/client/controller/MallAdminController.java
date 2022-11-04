@@ -14,39 +14,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tnsif.client.service.ShopOwnerService;
-import com.tnsif.client.entities.ShopOwner;
+import com.tnsif.client.entities.MallAdmin;
+import com.tnsif.client.service.MallAdminService;
 
 @RestController
-@RequestMapping("shop_owner")
-public class ShopOwnerController {
-	
+@RequestMapping("mallAdmin")
+public class MallAdminController {
+
 	@Autowired
-	private ShopOwnerService service;
-	
+	private MallAdminService service;
+		
 	@GetMapping("/list")
-	public List<ShopOwner> getAllShopOwners(){
-		return service.listAllShopOwners();
-	}
-	
-	@PostMapping("/create")
-	public void createShopOwner(@RequestBody ShopOwner shopOwner) {
-		service.addShopOwner(shopOwner);
+	public List<MallAdmin> getAllMallAdmins(){
+		return service.listAllMallAdmins();
 	}
 	
 	@GetMapping("/search/{id}")
-	public ResponseEntity<ShopOwner> getShopOwnerById(@PathVariable Integer id){
-		ShopOwner owner = service.searchShopOwner(id);
-		return new ResponseEntity<ShopOwner>(owner, HttpStatus.OK);
-	}
+	public ResponseEntity<MallAdmin> getMallAdminById(@PathVariable Integer id){
+		MallAdmin mallAdmin = service.searchMallAdmin(id);
+		return new ResponseEntity<MallAdmin>(mallAdmin, HttpStatus.OK);
+	}	
+	
+	@PostMapping("/create")
+	public void createMallAdmin(@RequestBody MallAdmin mallAdmin) {
+		service.addMallAdmin(mallAdmin);
+	}	
 	
 	@DeleteMapping("/delete/{id}")
-	public void deleteShopOwnerById(@PathVariable Integer id) {
-		service.deleteShopOwner(id);
+	public void deleteMallAdminById(@PathVariable Integer id) {
+		service.deleteMallAdmin(id);
 	}
 	
 	@PutMapping("/update/{id}")
-	public void updateShopOwner(@PathVariable Integer id,@RequestBody ShopOwner shopOwner) {
-		service.updateShopOwner(id, shopOwner);
+	public void updateMallAdmin(@PathVariable Integer id,@RequestBody MallAdmin mallAdmin){
+		service.updateMallAdmin(id, mallAdmin);
 	}
 }

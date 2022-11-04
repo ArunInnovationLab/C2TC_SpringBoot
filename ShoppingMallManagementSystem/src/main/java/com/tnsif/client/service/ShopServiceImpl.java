@@ -8,14 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tnsif.client.entities.Shop;
-import com.tnsif.client.repository.IShopRepository;
+import com.tnsif.client.repository.ShopRepository;
 
 @Service
 @Transactional
-public class ShopServiceImpl implements IShopService{
+public class ShopServiceImpl implements ShopService{
 
 	@Autowired
-	private IShopRepository repo;
+	private ShopRepository repo;
 	
 	@Override
 	public void addShop(Shop shop) {
